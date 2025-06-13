@@ -1,0 +1,30 @@
+{
+  "name": "manifestival",
+  "version": "0.0.1",
+  "description": "View and edit IIIF manifests with multiple viewers in an interactive sandbox",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulieWinchester/manifestival.git"
+  },
+  "author": "Julie Winchester",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/JulieWinchester/manifestival/issues"
+  },
+  "homepage": "https://github.com/JulieWinchester/manifestival#readme",
+  "devDependencies": {
+    "ejs": "^3.1.10",
+    "html-webpack-plugin": "^5.6.3",
+    "js-yaml": "^4.1.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2",
+    "webpack-dev-server": "^4.13.2",
+    "yaml-loader": "^0.8.1"
+  }
+}
