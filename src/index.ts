@@ -62,7 +62,9 @@ function viewManifest(): void {
     // Set the iframe src dynamically
 
     viewer.src = "";
-    viewer.src = viewerSelect.value + dataUrl;
+    setTimeout(() => {
+      viewer.src = viewerSelect.value + dataUrl;
+    }, 100);
   }
 }
 
