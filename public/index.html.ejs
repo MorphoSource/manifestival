@@ -13,8 +13,8 @@
     <div class="d-flex flex-column align-items-center p-4 gap-4">
       <h2>Manifestival: View IIIF 3D in Multiple Viewers</h2> 
     </div>
-    <div class="d-flex justify-content-center gap-4 p-4">
-      <div>
+    <div class="row px-4">
+      <div class="col-lg-6" style="height: 670px;">
         <div class="d-flex align-items-center py-2 gap-2" style="">
           <label for="viewer-select">Viewer: </label>
           <select id="viewer-select" class="form-select">
@@ -23,10 +23,10 @@
             <% }); %>
           </select>
         </div>
-        <iframe id="viewer" width="800" height="600"></iframe>
+        <iframe id="viewer" class="w-100" style="height: 608px;"></iframe>
       </div>
       
-      <div class="w-100 h-24">
+      <div class="col-lg-6"  style="height: 670px;">
         <div class="py-2">
           <button id="load-manifest" class="btn btn-primary">Load Manifest Into Viewer</button>
         </div>
@@ -34,7 +34,8 @@
           id="manifest"
           name="manifest"
           wrap="off"
-          class="w-100 h-100"
+          class="w-100"
+          style="height: 500px;"
         >
 {
   "@context": "http://iiif.io/api/presentation/4/context.json",
@@ -70,6 +71,23 @@
   ]
 }
         </textarea>
+        <div class="d-flex align-items-center py-2 gap-2" style="">
+          <select id="manifest-select" class="form-select">
+            <option value="">Select an Example Manifest</option>
+            <% exampleManifests.forEach(function(group) { %>
+              <optgroup label="<%= group.group %>">
+              <% group.manifests.forEach(function(manifest) { %>
+                <option value="<%= manifest.url %>"><%= manifest.name %></option>
+              <% }); %>
+              </optgroup>
+            <% }); %>
+          </select>
+        </div>
+        <div class="d-flex align-items-center py-2 gap-2" style="">
+          <input type="text" id="manifest-from-url" class="form-control" placeholder="Manifest URL to Import" style="width: unset; flex: 3">
+          </input>
+          <button id="load-manifest-from-url" class="btn btn-primary" style="width: unset; flex: 1">Load</button>
+        </div>
       </div>
     </div>
   </body>
