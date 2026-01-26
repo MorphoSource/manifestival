@@ -63,7 +63,7 @@ function viewManifest(): void {
 
     viewer.src = "";
     setTimeout(() => {
-      viewer.src = viewerSelect.value + dataUrl;
+      viewer.src = viewerSelect.value + encodeURIComponent(dataUrl);
     }, 100);
   }
 }
@@ -81,6 +81,6 @@ function validateJson(element: HTMLTextAreaElement): boolean {
     }
   } else {
     element.setCustomValidity('');
-    return true; 
+    return true;
   }
 }
