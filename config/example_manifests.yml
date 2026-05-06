@@ -5,7 +5,7 @@
     - name: Single Model with background color
       url: https://raw.githubusercontent.com/IIIF/3d/main/manifests/1_basic_model_in_scene/model_origin_bgcolor.json
 - group: 2. Cameras
-  manifests: 
+  manifests:
     - name: Model with Explicit Perspective Camera
       url: https://raw.githubusercontent.com/IIIF/3d/main/manifests/2_cameras/perspective_camera.json
     - name: Model with Explicit Perspective Camera Looking at an Annotation
@@ -76,10 +76,59 @@
       url: https://raw.githubusercontent.com/IIIF/3d/main/manifests/10_content_state/astronaut_comment_scope.json
     - name: Whale Cranium and Mandible with Dynamic Commenting Annotations and Custom Per-Anno Views
       url: https://raw.githubusercontent.com/IIIF/3d/main/manifests/10_content_state/whale_comment_scope_content_state.json
-
-
-
-
-
-    - name:
-      url: 
+- group: 11. IIIF Prezi-4 Index Manifests
+  manifests:
+    - name: Timeline
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/02_timeline.json
+    - name: Canvas
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/03_canvas.json
+    - name: Scene
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/04_scene.json
+    - name: Annotation Page
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/09_anno_page_1.json
+    - name: Annotation Collection
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/09_anno_collection.json
+    - name: Fragment Reference
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/05_fragment.json
+    - name: Specific Resource
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/06_specific_resource.json
+    - name: Collection
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/07_collection.json
+    - name: Range
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/08_range.json
+    - name: "Use Case 1: Artwork"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc01_artwork.json
+    - name: "Use Case 2: Book"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc02_book.json
+    - name: "Use Case 3: Periodical Collection"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc03_periodical.json
+    - name: "Use Case 3: Periodical Volume 1"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc03_vol1.json
+    - name: "Use Case 3: Periodical Issue"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc03_issue1.json
+    - name: "Use Case 4: 45 Single"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc04_audio.json
+    - name: "Use Case 4: 45 Single Annotations"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc04_annotations.json
+    - name: "Use Case 5: Movie with Subtitles"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc05_movie.json
+    - name: "Use Case 6: Reconstruction of Separated Object"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc07_image_composite.json
+    - name: "Use Case 7: 3D Chessboard - Basic Scene"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc06_3d.json
+    - name: "Use Case 7: 3D Chessboard - Configured Scene"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc06_3d_annotation.json
+    - name: "Use Case 7: 3D Chessboard - Multiple Objects"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc06_multiple_3d_objects.json
+    - name: "Use Case 7: 3D Chessboard - Audio in 3D"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc06_audio_with_3d.json
+    - name: "Use Case 7: 3D Chessboard - Scene in Scene"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc06_scene_in_scene.json
+    - name: "Use Case 7: 3D Chessboard - Canvas in Scene"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc06_canvas_in_scene.json
+    - name: "Use Case 8: Commenting on Specific Features"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc08_image_annotation.json
+    - name: "Use Case 8: Commenting on 3D Sculpture"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc08_3d_annotation.json
+    - name: "Use Case 8: 3D Comments with Cameras"
+      url: https://preview.iiif.io/api/prezi-4/presentation/4.0/example/uc08_3d_comments_with_cameras.json
