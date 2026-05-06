@@ -1,5 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-  viewManifest();
+let referenceManifest: { url: string; text: string } | null = null;
+
+document.addEventListener('DOMContentLoaded', async function() {
+  const manifestSelect = document.getElementById('manifest-select') as HTMLSelectElement;
+  const firstOption = Array.from(manifestSelect.options).find(opt => opt.value !== '');
+  if (firstOption) {
+    manifestSelect.value = firstOption.value;
+    const manifestUrl = document.getElementById('manifest-from-url') as HTMLInputElement;
+    manifestUrl.value = firstOption.value;
+    await loadAndViewManifest();
+  }
 });
 
 document.getElementById('load-manifest')?.addEventListener('click', function() {
@@ -42,6 +51,7 @@ async function loadManifestFromUrl(): Promise<void> {
       }
       const manifestData = await response.text();
       manifestTextarea.value = manifestData;
+      referenceManifest = { url: manifestUrl.value, text: manifestData };
     } catch (error) {
       console.error('Error fetching manifest:', error);
       manifestTextarea.value = '';
@@ -56,14 +66,16 @@ function viewManifest(): void {
   const viewerSelect = document.getElementById('viewer-select') as HTMLSelectElement;
 
   if (manifestTextarea?.value && validateJson(manifestTextarea)) {
-    // Create a data URL
-    const dataUrl = 'data:application/json,' + encodeURIComponent(JSON.stringify(JSON.parse(manifestTextarea.value)));
-    console.log(dataUrl);
-    // Set the iframe src dynamically
+    let manifestParam: string;
+    if (referenceManifest && manifestTextarea.value === referenceManifest.text) {
+      manifestParam = referenceManifest.url;
+    } else {
+      manifestParam = 'data:application/json,' + encodeURIComponent(JSON.stringify(JSON.parse(manifestTextarea.value)));
+    }
 
     viewer.src = "";
     setTimeout(() => {
-      viewer.src = viewerSelect.value + encodeURIComponent(dataUrl);
+      viewer.src = viewerSelect.value + encodeURIComponent(manifestParam);
     }, 100);
   }
 }
