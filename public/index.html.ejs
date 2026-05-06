@@ -58,5 +58,43 @@
         </div>
       </div>
     </div>
+    <div class="row px-4 mt-4">
+      <div class="col">
+        <h3>How to Use</h3>
+        <p>
+          Manifestival lets you view IIIF Presentation API 4.0 manifest content across multiple 3D viewers.
+          Select an example from the dropdown or paste a manifest URL into the Import URL field and click
+          <strong>Load</strong> to fetch it. The manifest JSON will appear in the text area, where you can
+          edit it freely. Click <strong>Load Manifest Into Viewer</strong> to render the current JSON in
+          the selected viewer, or switch viewers using the Viewer dropdown to re-render immediately.
+          Use <strong>Copy URL to Share View</strong> to copy a shareable link to the currently loaded manifest content to your clipboard.
+        </p>
+      </div>
+    </div>
+
+    <div class="row px-4 mt-2 mb-4">
+      <div class="col">
+        <h3>FAQ</h3>
+        <div class="accordion" id="faq-accordion">
+          <% faq.forEach(function(item, index) { %>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq-<%= index %>"
+                  aria-expanded="false"
+                  aria-controls="faq-<%= index %>"
+                ><%= item.question %></button>
+              </h2>
+              <div id="faq-<%= index %>" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                <div class="accordion-body"><%= item.answer %></div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

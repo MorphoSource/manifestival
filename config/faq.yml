@@ -1,0 +1,39 @@
+- question: What is Manifestival?
+  answer: >
+    Manifestival is a tool for viewing IIIF Presentation API 4.0 manifests across multiple 3D viewers side by side.
+    It lets you load any manifest by URL or paste JSON directly, edit it live, and compare how different
+    viewers render the same content.
+
+- question: What is a IIIF Manifest?
+  answer: >
+    A IIIF Manifest is a JSON document that describes a digital object, such as an image, book, audio
+    recording, video, or 3D model, and provides enough information for a compatible viewer to display it.
+    Manifests follow the <a href="https://preview.iiif.io/api/prezi-4/presentation/4.0/" target="_blank">IIIF Presentation API</a> specification.
+
+- question: How do I load a manifest?
+  answer: >
+    You can load a manifest in three ways: select one from the "Select Example" dropdown to load a
+    pre-built example; paste a URL into the "Import URL" field and click Load; or type or paste
+    raw JSON directly into the text area. Once the manifest is in the text area, click
+    "Load Manifest Into Viewer" to render it.
+
+- question: Can I edit the manifest JSON directly?
+  answer: >
+    Yes. The text area is fully editable. Modify the JSON however you like, then click
+    "Load Manifest Into Viewer" to re-render with your changes. If the JSON is not valid,
+    the page will warn you before attempting to load.
+
+- question: How does sharing work?
+  answer: >
+    Click "Copy URL to Share View" to copy a URL to your clipboard. If you are viewing an
+    example or imported manifest that has not been modified, the URL will contain the original
+    manifest URL as a <code>iiif-content</code> query parameter. If you have edited the
+    JSON, the full manifest data is embedded in the URL instead, so the recipient sees exactly
+    what you see.
+
+- question: Why does a manifest load in the text area but not render in the viewer?
+  answer: >
+    Different viewers support different subsets of the IIIF Presentation API. A manifest that
+    is valid JSON and conforms to the spec may still not render if the selected viewer does not
+    yet implement the features it uses, for example, 3D Scenes, Audio Emitters, Activating
+    Annotations, etc. Try switching to a different viewer using the Viewer dropdown.
