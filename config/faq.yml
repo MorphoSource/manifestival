@@ -37,3 +37,9 @@
     is valid JSON and conforms to the spec may still not render if the selected viewer does not
     yet implement the features it uses, for example, 3D Scenes, Audio Emitters, Activating
     Annotations, etc. Try switching to a different viewer using the Viewer dropdown.
+
+- question: Where is the source code for Manifestival?
+  answer: >
+    Manifestival is open source and the source code is available on
+    <a href="https://github.com/MorphoSource/manifestival" target="_blank">GitHub</a>. Issues
+    and contributions are welcome!
