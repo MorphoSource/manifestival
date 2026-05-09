@@ -4,5 +4,5 @@
   url: https://blacklodge.hki.uni-koeln.de/viewer/?locale=en&standalone=true&manifest=
 - name: Voyager (Smithsonian)
   url: https://smithsonian.github.io/voyager-dev/iiif/iiif_demo.html?document=
-- name: X3DOM Viewer
-  url: https://spri-open-resources.s3.us-east-2.amazonaws.com/iiif3dtsg/manifest/index.html#?manifest=
+- name: X_ITE Viewer
+  url: https://www.kshell.com/pages/iiif3d/x_ite/view/index.html?manifest=
