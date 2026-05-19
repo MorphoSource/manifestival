@@ -5,6 +5,7 @@ const yaml = require('js-yaml');
 
 const viewers = yaml.load(fs.readFileSync('./config/viewers.yml', 'utf8'));
 const exampleManifests = yaml.load(fs.readFileSync('./config/example_manifests.yml', 'utf8'));
+const faq = yaml.load(fs.readFileSync('./config/faq.yml', 'utf8'));
 
 module.exports = {
   entry: './src/index.ts',
@@ -32,7 +33,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html.ejs',
-      templateParameters: { exampleManifests, viewers }, 
+      templateParameters: { exampleManifests, viewers, faq },
     }),
   ],
   devServer: {

@@ -5,3 +5,10 @@ iframe {
 textarea {
   font-family: monospace;
 }
+
+.manifest-inputs {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}

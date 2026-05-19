@@ -11,7 +11,7 @@
 
   <body>
     <div class="d-flex flex-column align-items-center p-4 gap-4">
-      <h2>Manifestival: View IIIF 3D in Multiple Viewers</h2> 
+      <h2>Manifestival: View IIIF 3D in Multiple Viewers</h2>
     </div>
     <div class="row px-4">
       <div class="col-lg-6" style="height: 670px;">
@@ -25,10 +25,11 @@
         </div>
         <iframe id="viewer" class="w-100" style="height: 608px;"></iframe>
       </div>
-      
+
       <div class="col-lg-6"  style="height: 670px;">
-        <div class="py-2">
+        <div class="d-flex gap-2 py-2">
           <button id="load-manifest" class="btn btn-primary">Load Manifest Into Viewer</button>
+          <button id="copy-share-url" class="btn btn-primary">Copy URL to Share View</button>
         </div>
         <textarea
           id="manifest"
@@ -36,42 +37,9 @@
           wrap="off"
           class="w-100"
           style="height: 500px;"
-        >
-{
-  "@context": "http://iiif.io/api/presentation/4/context.json",
-  "id": "https://example.org/iiif/3d/model_origin.json",
-  "type": "Manifest",
-  "label": { "en": ["Single Model"] },
-  "summary": { "en": ["Viewer should render the model at the scene origin, and then viewer should add default lighting and camera"] },
-  "items": [
-    {
-      "id": "https://example.org/iiif/scene1/page/p1/1",
-      "type": "Scene",
-      "label": { "en": ["A Scene"] },
-      "items": [
-        {
-          "id": "https://example.org/iiif/scene1/page/p1/1",
-          "type": "AnnotationPage",
-          "items": [
-            {
-              "id": "https://example.org/iiif/3d/anno1",
-              "type": "Annotation",
-              "motivation": ["painting"],
-              "body": {
-                "id": "https://raw.githubusercontent.com/IIIF/3d/main/assets/astronaut/astronaut.glb",
-                "type": "Model",
-                "format": "model/gltf-binary"
-              },
-              "target": "https://example.org/iiif/scene1/page/p1/1"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-        </textarea>
-        <div class="d-flex align-items-center py-2 gap-2" style="">
+        ></textarea>
+        <div class="manifest-inputs py-2">
+          <div style="padding-right: 5px;">Select Example</div>
           <select id="manifest-select" class="form-select">
             <option value="">Select an Example Manifest</option>
             <% exampleManifests.forEach(function(group) { %>
@@ -82,11 +50,49 @@
               </optgroup>
             <% }); %>
           </select>
+          <div style="padding-right: 5px;">Import URL</div>
+          <div class="d-flex gap-2">
+            <input type="text" id="manifest-from-url" class="form-control" placeholder="Manifest URL to Import" style="flex: 3">
+            <button id="load-manifest-from-url" class="btn btn-primary" style="flex: 1">Load</button>
+          </div>
         </div>
-        <div class="d-flex align-items-center py-2 gap-2" style="">
-          <input type="text" id="manifest-from-url" class="form-control" placeholder="Manifest URL to Import" style="width: unset; flex: 3">
-          </input>
-          <button id="load-manifest-from-url" class="btn btn-primary" style="width: unset; flex: 1">Load</button>
+      </div>
+    </div>
+    <div class="row px-4 mt-4">
+      <div class="col">
+        <h3>How to Use</h3>
+        <p>
+          Manifestival lets you view IIIF Presentation API 4.0 manifest content across multiple 3D viewers.
+          Select an example from the dropdown or paste a manifest URL into the Import URL field and click
+          <strong>Load</strong> to fetch it. The manifest JSON will appear in the text area, where you can
+          edit it freely. Click <strong>Load Manifest Into Viewer</strong> to render the current JSON in
+          the selected viewer, or switch viewers using the Viewer dropdown to re-render immediately.
+          Use <strong>Copy URL to Share View</strong> to copy a shareable link to the currently loaded manifest content to your clipboard.
+        </p>
+      </div>
+    </div>
+
+    <div class="row px-4 mt-2 mb-4">
+      <div class="col">
+        <h3>FAQ</h3>
+        <div class="accordion" id="faq-accordion">
+          <% faq.forEach(function(item, index) { %>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq-<%= index %>"
+                  aria-expanded="false"
+                  aria-controls="faq-<%= index %>"
+                ><%= item.question %></button>
+              </h2>
+              <div id="faq-<%= index %>" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                <div class="accordion-body"><%= item.answer %></div>
+              </div>
+            </div>
+          <% }); %>
         </div>
       </div>
     </div>
