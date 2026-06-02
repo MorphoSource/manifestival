@@ -1,7 +1,7 @@
 - name: Aleph + UV (MorphoSource)
   url: https://morphosource.github.io/universalviewer/uv.html#?manifest=
 - name: Kompakkt
-  url: https://blacklodge.hki.uni-koeln.de/viewer/?locale=en&standalone=true&manifest=
+  url: https://kompakkt.github.io/Viewer/?locale=en&standalone=true&manifest=
 - name: Voyager (Smithsonian)
   url: https://smithsonian.github.io/voyager-dev/iiif/iiif_demo.html?document=
 - name: X_ITE Viewer
